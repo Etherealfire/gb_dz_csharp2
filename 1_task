@@ -1,0 +1,5 @@
+int number = new Random().Next(100, 1000);
+Console.WriteLine(number);
+
+number = number / 10 % 10;
+Console.WriteLine("Вторая цифра этого числа : " + number);
