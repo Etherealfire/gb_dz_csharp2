@@ -1,0 +1,32 @@
+int number = new Random().Next(1, 65536);
+Console.WriteLine("Число: " + number);
+
+if (number <= 2)
+{
+	Console.WriteLine("Третьей цифры нет");
+}
+
+else
+{
+	int reversenumber = ReverseNumber(number);
+	int result = ThirdNumber(reversenumber);
+	Console.WriteLine("Третья цифра числа: " + result);
+}
+int ReverseNumber(int n1)
+{
+	int result = 0;
+	while (n1 > 0)
+	{
+		result *= 10;
+		result += n1 % 10;
+		n1 /= 10;
+	}
+	return result;
+}
+
+int ThirdNumber(int number)
+{
+	number %= 1000;
+	number /= 100;
+	return number;
+}
